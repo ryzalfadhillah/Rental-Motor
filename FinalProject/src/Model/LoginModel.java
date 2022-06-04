@@ -42,9 +42,10 @@ public class LoginModel {
 
         if (rs.next()) {
             if (email.equals(rs.getString("email")) && pass.equals(rs.getString("password"))) {
-                home = new HomeView();
-                home.setVisible(true);
                 JOptionPane.showMessageDialog(view, "Login berhasil");
+                home = new HomeView();
+                home.getLabelNama().setText(rs.getString("username"));
+                home.setVisible(true);                
                 view.dispose();
             } else {
                 JOptionPane.showMessageDialog(view, "Email atau password salah");
