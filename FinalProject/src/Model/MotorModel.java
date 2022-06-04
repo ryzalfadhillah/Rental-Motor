@@ -71,6 +71,7 @@ public class MotorModel {
             tabelData.addColumn("Type");
             tabelData.addColumn("Tahun");
             tabelData.addColumn("Harga");
+            tabelData.addColumn("Status");
 
             String query = "SELECT * FROM motor";
 
@@ -78,13 +79,14 @@ public class MotorModel {
             ResultSet rs = conn.statement.executeQuery(query);
 
             while (rs.next()) {
-                Object[] obj = new Object[5];
+                Object[] obj = new Object[6];
 
                 obj[0] = rs.getString("nopol");
                 obj[1] = rs.getString("merk");
                 obj[2] = rs.getString("type");
                 obj[3] = rs.getString("tahun");
                 obj[4] = rs.getString("harga");
+                obj[5] = rs.getString("status");
 
                 tabelData.addRow(obj);
             }
@@ -102,12 +104,12 @@ public class MotorModel {
             String tahun = view.getfTahun().getText();
             String harga = view.getfHarga().getText();
 
-            String query = "INSERT INTO `motor` (`nopol`, `merk`, `type`, `tahun`, `harga`) VALUES ('"
+            String query = "INSERT INTO `motor` (`nopol`, `merk`, `type`, `tahun`, `harga`, `status`) VALUES ('"
                     + nopol + "', '"
                     + merk + "', '"
                     + type + "', '"
                     + tahun + "', '"
-                    + harga + "')";
+                    + harga + "', 'ada')";
 
             conn.statement = conn.connection.createStatement();
             conn.statement.execute(query);
@@ -139,18 +141,17 @@ public class MotorModel {
     }
 
     public void delete(HomeView view, String nopol) {
-        try{
-            String query = "DELETE FROM `motor` WHERE `nopol` = '" + getNopol() +"'";
-            
+        try {
+            String query = "DELETE FROM `motor` WHERE `nopol` = '" + getNopol() + "'";
+
             conn.statement = conn.connection.createStatement();
             conn.statement.execute(query);
-            
-            JOptionPane.showMessageDialog(view, "Berhasil menghapus data");   
-        }catch (SQLException ex) {
+
+            JOptionPane.showMessageDialog(view, "Berhasil menghapus data");
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             JOptionPane.showMessageDialog(view, "Terjadi kesalahan saat terhubung ke database");
         }
     }
-
 
 }

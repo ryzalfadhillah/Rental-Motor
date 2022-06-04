@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/Model/ProfilModel.java</file>
-            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/Controller/ProfilController.java</file>
-            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/Model/LoginModel.java</file>
-            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/View/LoginView.java</file>
-            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/Controller/LoginController.java</file>
+            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/View/HomeView.java</file>
+            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/Model/MotorModel.java</file>
+            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/Model/TransaksiModel.java</file>
+            <file>file:/F:/Mata%20Kuliah/SEMESTER%204/Prak.%20PBO%20-%20E/FinalProject/src/Controller/HomeController.java</file>
         </group>
     </open-files>
 </project-private>

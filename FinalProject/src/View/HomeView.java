@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -24,7 +25,7 @@ public class HomeView extends javax.swing.JFrame {
     HomeController control;
     MotorModel modelM;
     TransaksiModel modelT;
-    
+
     public HomeView() {
         initComponents();
         control = new HomeController();
@@ -58,7 +59,7 @@ public class HomeView extends javax.swing.JFrame {
         homePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         sewaPanel = new javax.swing.JPanel();
-        biodataCust = new javax.swing.JPanel();
+        lhargaperhari = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -77,12 +78,15 @@ public class HomeView extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         lHarga = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        cmMerk = new javax.swing.JComboBox<>();
-        cmType = new javax.swing.JComboBox<>();
         cmNopol = new javax.swing.JComboBox<>();
         lTahun = new javax.swing.JLabel();
         lDurasi = new javax.swing.JLabel();
         cmDurasi = new javax.swing.JComboBox<>();
+        lMerk = new javax.swing.JLabel();
+        lType = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        lTotal = new javax.swing.JLabel();
         kembaliPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelTransaksi = new javax.swing.JTable();
@@ -254,7 +258,7 @@ public class HomeView extends javax.swing.JFrame {
         );
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
         );
 
         mainPanel.add(homePanel, "card5");
@@ -262,7 +266,8 @@ public class HomeView extends javax.swing.JFrame {
         sewaPanel.setBackground(new java.awt.Color(255, 255, 255));
         sewaPanel.setLayout(new java.awt.CardLayout());
 
-        biodataCust.setBackground(new java.awt.Color(255, 255, 255));
+        lhargaperhari.setBackground(new java.awt.Color(255, 255, 255));
+        lhargaperhari.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel16.setFont(new java.awt.Font("Sora", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
@@ -300,13 +305,13 @@ public class HomeView extends javax.swing.JFrame {
         jLabel22.setText("Pilih motor :");
 
         jLabel23.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel23.setText("Merk");
+        jLabel23.setText("No. Polisi");
 
         jLabel24.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel24.setText("Type");
+        jLabel24.setText("Merk");
 
         jLabel25.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel25.setText("No. Polisi");
+        jLabel25.setText("Type");
 
         jLabel26.setForeground(new java.awt.Color(51, 51, 51));
         jLabel26.setText("Tahun");
@@ -321,18 +326,19 @@ public class HomeView extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Sora", 0, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Sewa");
-
-        cmMerk.setBackground(new java.awt.Color(255, 255, 255));
-        cmMerk.setForeground(new java.awt.Color(51, 51, 51));
-        cmMerk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cmType.setBackground(new java.awt.Color(255, 255, 255));
-        cmType.setForeground(new java.awt.Color(51, 51, 51));
-        cmType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         cmNopol.setBackground(new java.awt.Color(255, 255, 255));
         cmNopol.setForeground(new java.awt.Color(51, 51, 51));
-        cmNopol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmNopol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmNopolActionPerformed(evt);
+            }
+        });
 
         lTahun.setForeground(new java.awt.Color(51, 51, 51));
         lTahun.setText("Tahun");
@@ -342,117 +348,150 @@ public class HomeView extends javax.swing.JFrame {
 
         cmDurasi.setBackground(new java.awt.Color(255, 255, 255));
         cmDurasi.setForeground(new java.awt.Color(51, 51, 51));
-        cmDurasi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Hari", "2 Hari", "3 Hari", "4 Hari", "5 Hari", "6 Hari", "7 Hari" }));
+        cmDurasi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7" }));
+        cmDurasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmDurasiActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout biodataCustLayout = new javax.swing.GroupLayout(biodataCust);
-        biodataCust.setLayout(biodataCustLayout);
-        biodataCustLayout.setHorizontalGroup(
-            biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        lMerk.setForeground(new java.awt.Color(51, 51, 51));
+        lMerk.setText("Merk");
+
+        lType.setForeground(new java.awt.Color(51, 51, 51));
+        lType.setText("Type");
+
+        jLabel28.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel28.setText("hari");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel29.setText("Total");
+
+        lTotal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lTotal.setForeground(new java.awt.Color(51, 51, 51));
+        lTotal.setText("Total");
+
+        javax.swing.GroupLayout lhargaperhariLayout = new javax.swing.GroupLayout(lhargaperhari);
+        lhargaperhari.setLayout(lhargaperhariLayout);
+        lhargaperhariLayout.setHorizontalGroup(
+            lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(biodataCustLayout.createSequentialGroup()
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(biodataCustLayout.createSequentialGroup()
+            .addGroup(lhargaperhariLayout.createSequentialGroup()
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lhargaperhariLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel17))
-                    .addGroup(biodataCustLayout.createSequentialGroup()
+                    .addGroup(lhargaperhariLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel21)
                             .addComponent(jLabel20)
                             .addComponent(jLabel19)
                             .addComponent(jLabel18))
                         .addGap(30, 30, 30)
-                        .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(fNoTlp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(fNIK, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(fNama, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(fAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 127, Short.MAX_VALUE))
-            .addGroup(biodataCustLayout.createSequentialGroup()
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(biodataCustLayout.createSequentialGroup()
+            .addGroup(lhargaperhariLayout.createSequentialGroup()
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(lhargaperhariLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel22))
-                    .addGroup(biodataCustLayout.createSequentialGroup()
+                    .addGroup(lhargaperhariLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel23)
                             .addComponent(jLabel24)
                             .addComponent(jLabel25)
-                            .addGroup(biodataCustLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel27))
                             .addComponent(jLabel26)
-                            .addComponent(lDurasi))
+                            .addComponent(lDurasi)
+                            .addGroup(lhargaperhariLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel29))))
                         .addGap(24, 24, 24)
-                        .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lTahun)
                             .addComponent(lHarga)
-                            .addComponent(cmType, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmMerk, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmNopol, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmDurasi, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(biodataCustLayout.createSequentialGroup()
-                        .addGap(198, 198, 198)
+                            .addComponent(lMerk)
+                            .addComponent(lType)
+                            .addGroup(lhargaperhariLayout.createSequentialGroup()
+                                .addComponent(cmDurasi, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel28))
+                            .addComponent(lTotal)))
+                    .addGroup(lhargaperhariLayout.createSequentialGroup()
+                        .addGap(199, 199, 199)
                         .addComponent(jButton6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        biodataCustLayout.setVerticalGroup(
-            biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(biodataCustLayout.createSequentialGroup()
+        lhargaperhariLayout.setVerticalGroup(
+            lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lhargaperhariLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(fNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(fNIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(fNoTlp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(fAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
-                    .addComponent(cmMerk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(cmType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
                     .addComponent(cmNopol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(lMerk))
+                .addGap(12, 12, 12)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(lType))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
                     .addComponent(lTahun))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lDurasi)
-                    .addComponent(cmDurasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(biodataCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmDurasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
                     .addComponent(lHarga))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(lhargaperhariLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(lTotal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton6)
-                .addGap(66, 66, 66))
+                .addGap(60, 60, 60))
         );
 
-        sewaPanel.add(biodataCust, "card2");
+        sewaPanel.add(lhargaperhari, "card2");
 
         mainPanel.add(sewaPanel, "card3");
 
@@ -504,6 +543,11 @@ public class HomeView extends javax.swing.JFrame {
         btnKembalikan.setBackground(new java.awt.Color(51, 102, 255));
         btnKembalikan.setForeground(new java.awt.Color(255, 255, 255));
         btnKembalikan.setText("Kembalikan");
+        btnKembalikan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKembalikanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kembaliPanelLayout = new javax.swing.GroupLayout(kembaliPanel);
         kembaliPanel.setLayout(kembaliPanelLayout);
@@ -542,7 +586,7 @@ public class HomeView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnKembalikan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -728,7 +772,7 @@ public class HomeView extends javax.swing.JFrame {
                     .addComponent(btnUpdate)
                     .addComponent(btnHapus)
                     .addComponent(btnReset))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dataPanelLayout = new javax.swing.GroupLayout(dataPanel);
@@ -809,6 +853,11 @@ public class HomeView extends javax.swing.JFrame {
         mainPanel.add(sewaPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+        
+        resetFormSewa();
+        
+        cmNopol.removeAllItems();
+        control.cmNopol(this);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -819,6 +868,8 @@ public class HomeView extends javax.swing.JFrame {
         mainPanel.add(kembaliPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+        control.readTrabsaksi(this);
+        control.readTrabsaksiSelesai(this);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -829,7 +880,7 @@ public class HomeView extends javax.swing.JFrame {
         mainPanel.add(dataPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         try {
             control.readMotor(this);
         } catch (SQLException ex) {
@@ -840,7 +891,7 @@ public class HomeView extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         int opsi = JOptionPane.showConfirmDialog(this, "Yakin ingin keluar?");
-        if(opsi == JOptionPane.YES_OPTION){
+        if (opsi == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -882,6 +933,41 @@ public class HomeView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnHapusActionPerformed
 
+    private void btnKembalikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembalikanActionPerformed
+        // TODO add your handling code here:
+        control.kembaliMotor(this);
+    }//GEN-LAST:event_btnKembalikanActionPerformed
+
+    private void cmNopolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmNopolActionPerformed
+        // TODO add your handling code here:
+        String selectedValue = cmNopol.getSelectedItem().toString();
+        control.dataSewaMotor(this, selectedValue);
+    }//GEN-LAST:event_cmNopolActionPerformed
+
+    private void cmDurasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmDurasiActionPerformed
+        // TODO add your handling code here:
+        String selectedValue = cmDurasi.getSelectedItem().toString();
+        double durasi = Double.parseDouble(selectedValue);
+        
+        String harga = lHarga.getText();
+        double hargaPerHari = Double.parseDouble(harga);
+        
+        double harga2 = durasi * hargaPerHari;
+        String HargaSewa = String.valueOf(harga2);
+        
+        lTotal.setText(HargaSewa);
+        
+    }//GEN-LAST:event_cmDurasiActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        try {
+            // TODO add your handling code here:
+            control.sewaMotor(this);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -918,16 +1004,13 @@ public class HomeView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel biodataCust;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnKembalikan;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cmDurasi;
-    private javax.swing.JComboBox<String> cmMerk;
     private javax.swing.JComboBox<String> cmNopol;
-    private javax.swing.JComboBox<String> cmType;
     private javax.swing.JPanel dataPanel;
     private javax.swing.JTextField fAlamat;
     private javax.swing.JTextField fHarga;
@@ -965,6 +1048,8 @@ public class HomeView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -978,8 +1063,12 @@ public class HomeView extends javax.swing.JFrame {
     private javax.swing.JPanel kembaliPanel;
     private javax.swing.JLabel lDurasi;
     private javax.swing.JLabel lHarga;
+    private javax.swing.JLabel lMerk;
     private javax.swing.JLabel lTahun;
+    private javax.swing.JLabel lTotal;
+    private javax.swing.JLabel lType;
     private javax.swing.JLabel labelNama;
+    private javax.swing.JPanel lhargaperhari;
     private javax.swing.JLabel line;
     private javax.swing.JLabel line1;
     private javax.swing.JPanel mainPanel;
@@ -1002,26 +1091,42 @@ public class HomeView extends javax.swing.JFrame {
         return cmDurasi;
     }
 
-    public JComboBox<String> getCmMerk() {
-        return cmMerk;
-    }
-
     public JComboBox<String> getCmNopol() {
         return cmNopol;
     }
 
-    public JComboBox<String> getCmType() {
-        return cmType;
+    public JLabel getlMerk() {
+        return lMerk;
     }
 
+    public JLabel getlType() {
+        return lType;
+    }
+
+    public JLabel getlDurasi() {
+        return lDurasi;
+    }
+
+    public JLabel getlHarga() {
+        return lHarga;
+    }
+
+    public JLabel getlTahun() {
+        return lTahun;
+    }
+
+    public JLabel getlTotal() {
+        return lTotal;
+    }
+        
     public JTextField getfAlamat() {
         return fAlamat;
     }
 
     public JTextField getfHarga() {
         return fHarga;
-    }
-
+    }   
+    
     public JTextField getfMerk() {
         return fMerk;
     }
@@ -1062,12 +1167,19 @@ public class HomeView extends javax.swing.JFrame {
         return tabelTransaksiSelesai;
     }
 
-    public void reset(){
+    public void reset() {
         fNopol.setText("");
         fMerk.setText("");
         fType.setText("");
         fTahun.setText("");
         fHarga.setText("");
     }
-    
+
+    public void resetFormSewa() {
+        fNama.setText("");
+        fNIK.setText("");
+        fNoTlp.setText("");
+        fAlamat.setText("");
+    }
+
 }

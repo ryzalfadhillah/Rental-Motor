@@ -303,7 +303,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" alignment="0" pref="500" max="32767" attributes="0"/>
+                      <Component id="jLabel1" alignment="0" pref="516" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -331,9 +331,12 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="biodataCust">
+                <Container class="javax.swing.JPanel" name="lhargaperhari">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
@@ -386,25 +389,33 @@
                                           <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                                          </Group>
                                           <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lDurasi" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lTahun" min="-2" max="-2" attributes="0"/>
                                           <Component id="lHarga" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cmType" min="-2" pref="105" max="-2" attributes="0"/>
-                                          <Component id="cmMerk" min="-2" pref="105" max="-2" attributes="0"/>
                                           <Component id="cmNopol" min="-2" pref="105" max="-2" attributes="0"/>
-                                          <Component id="cmDurasi" min="-2" pref="105" max="-2" attributes="0"/>
+                                          <Component id="lMerk" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lType" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="cmDurasi" min="-2" pref="42" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="lTotal" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
                                       <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -444,17 +455,17 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cmMerk" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmNopol" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cmType" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lMerk" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cmNopol" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lType" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -465,15 +476,21 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lDurasi" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cmDurasi" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="12" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lHarga" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -584,7 +601,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Merk"/>
+                        <Property name="text" type="java.lang.String" value="No. Polisi"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
@@ -592,7 +609,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Type"/>
+                        <Property name="text" type="java.lang.String" value="Merk"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel25">
@@ -600,7 +617,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="No. Polisi"/>
+                        <Property name="text" type="java.lang.String" value="Type"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel26">
@@ -640,48 +657,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Sewa"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="cmMerk">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                          </StringArray>
-                        </Property>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="cmType">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="33" green="33" red="33" type="rgb"/>
-                        </Property>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                          </StringArray>
-                        </Property>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="cmNopol">
                       <Properties>
@@ -692,14 +670,12 @@
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmNopolActionPerformed"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -730,19 +706,68 @@
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="7">
-                            <StringItem index="0" value="1 Hari"/>
-                            <StringItem index="1" value="2 Hari"/>
-                            <StringItem index="2" value="3 Hari"/>
-                            <StringItem index="3" value="4 Hari"/>
-                            <StringItem index="4" value="5 Hari"/>
-                            <StringItem index="5" value="6 Hari"/>
-                            <StringItem index="6" value="7 Hari"/>
+                            <StringItem index="0" value="1"/>
+                            <StringItem index="1" value="2"/>
+                            <StringItem index="2" value="3"/>
+                            <StringItem index="3" value="4"/>
+                            <StringItem index="4" value="5"/>
+                            <StringItem index="5" value="6"/>
+                            <StringItem index="6" value="7"/>
                           </StringArray>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmDurasiActionPerformed"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lMerk">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Merk"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lType">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Type"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel28">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="hari"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel29">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="12" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Total"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="lTotal">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="12" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Total"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -806,7 +831,7 @@
                           <Component id="jScrollPane1" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnKembalikan" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="15" max="32767" attributes="0"/>
+                          <EmptySpace pref="31" max="32767" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="150" max="-2" attributes="0"/>
@@ -914,6 +939,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Kembalikan"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKembalikanActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1104,7 +1132,7 @@
                                   <Component id="btnHapus" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="34" max="32767" attributes="0"/>
+                              <EmptySpace pref="50" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

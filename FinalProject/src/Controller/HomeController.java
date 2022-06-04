@@ -120,4 +120,61 @@ public class HomeController {
             JOptionPane.showMessageDialog(view, ex.getMessage());
         }
     }
+
+    public void readTrabsaksi(HomeView view) {
+        transaksi.read(view);
+    }
+    
+    public void readTrabsaksiSelesai(HomeView view) {
+        transaksi.readSelesai(view);
+    }
+
+    public void kembaliMotor(HomeView view) {
+        int pilih = view.getTabelTransaksi().getSelectedRow();
+
+        String nik = (String) view.getTabelTransaksi().getValueAt(pilih, 1);
+        String nopol = (String) view.getTabelTransaksi().getValueAt(pilih, 4);
+        
+        String status = "ada";
+        
+        transaksi.updateTransaksi(view, nik);
+        transaksi.updateStatusMotor(view, status, nopol);
+        transaksi.read(view);
+        transaksi.readSelesai(view);
+    }
+
+    public void cmNopol(HomeView view) {
+        transaksi.cmNopol(view);
+    }
+
+    public void dataSewaMotor(HomeView view, String selectedValue) {
+        transaksi.dataSewaMotor(view, selectedValue);
+    }
+
+    public void sewaMotor(HomeView view) throws SQLException {
+        try {
+            String nama = view.getfNama().getText();
+            String nik = view.getfNIK().getText();
+            String noTelp = view.getfNoTlp().getText();
+            String alamat = view.getfAlamat().getText();
+            String nopol = view.getCmNopol().getSelectedItem().toString();
+            String durasi = view.getCmDurasi().getSelectedItem().toString();
+            String harga = view.getlTotal().getText();
+            String status = "peminjaman";
+            
+            if (nama.equals("") || nik.equals("") || noTelp.equals("") || alamat.equals("") || durasi.equals("") ||harga.equals("")) {
+                JOptionPane.showMessageDialog(view, "Form tidak boleh kosong");
+            } else {
+                int opsi = JOptionPane.showConfirmDialog(view, "Yakin ingin menyewa?");
+                if (opsi == JOptionPane.YES_OPTION) {
+                    transaksi.sewaMotor(view, nama, nik, noTelp, alamat, nopol, durasi, harga);
+                    transaksi.updateStatusSewaMotor(view, status, nopol);
+                    view.resetFormSewa();
+                }
+            }
+        }catch (HeadlessException | NumberFormatException ex) {
+            System.out.println(ex.getMessage());
+            JOptionPane.showMessageDialog(view, ex.getMessage());
+        }
+    }
 }
